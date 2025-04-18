@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include "MvCameraControl.h"
-#include "MMonitorCam.h"
+#include "MonitorCam.h"
 
 
 static unsigned int g_nPayloadSize;
