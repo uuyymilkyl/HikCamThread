@@ -267,7 +267,7 @@ bool MMonitorCam::Convert2Mat(MV_CC_PIXEL_CONVERT_PARAM *pstImageInfo, unsigned 
 		return false;
 	}
 
-	//对赋值后的Mat做检查，常对变量做检查，切莫因小失大
+	//对赋值后的Mat做检查
 	if (NULL == srcImage.data)
 	{
 		return false;
@@ -279,8 +279,7 @@ bool MMonitorCam::Convert2Mat(MV_CC_PIXEL_CONVERT_PARAM *pstImageInfo, unsigned 
 #if defined (VC9_COMPILE)	//VC9中的OpenCV的保存函数：cvSaveImage()
 		cvSaveImage("MatImage.bmp", &(IplImage(srcImage)));
 #else
-		//cv::imwrite("E:\\360MoveData\\Users\\lenovo\\Desktop\\MatImage.jpeg", srcImage);
-		//在这里不做保存，直接赋值给全局变量用于添加水印和保存
+		
 		m_save_img = srcImage.clone();
 #endif
 	}
@@ -291,7 +290,7 @@ bool MMonitorCam::Convert2Mat(MV_CC_PIXEL_CONVERT_PARAM *pstImageInfo, unsigned 
 		return false;
 	}
 
-	//清空Mat变量，避免内存蹭蹭的涨
+	//清空Mat变量 内存控制操作
 	srcImage.release();
 	//返回正常值
 	return true;
@@ -299,7 +298,6 @@ bool MMonitorCam::Convert2Mat(MV_CC_PIXEL_CONVERT_PARAM *pstImageInfo, unsigned 
 
 int MMonitorCam::RGB2BGR(unsigned char *pRgbData, unsigned int nWidth, unsigned int nHeight)
 {
-    //常对变量做检查，切莫因小失大
 	if (NULL == pRgbData)
 	{
 		return MV_E_PARAMETER;
