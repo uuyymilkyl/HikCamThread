@@ -8,7 +8,7 @@
 #include "MonitorCam.h"
 
 
-static unsigned int g_nPayloadSize;
+static unsigned int g_nPayloadSize; 
 
 MMonitorCam::MMonitorCam()
 {

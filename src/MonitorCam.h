@@ -1,5 +1,5 @@
-#ifndef MMonItor_h
-#define MMonitor_H
+#ifndef MonItor_h
+#define Monitor_H
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -56,4 +56,4 @@ public:
 
 
 
-#endif //MMonitor_h
+#endif //Monitor_h
