@@ -4,7 +4,7 @@ HikCamThread - 基于海康工业相机的多线程图像采集demo
 
 ---
 
-
+```
 HikCamThread/
 ├── .git/                    # Git 配置目录（若使用版本控制）
 ├── src/                     # 源代码目录
